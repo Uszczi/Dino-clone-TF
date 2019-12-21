@@ -32,7 +32,7 @@ function setup()
 
 		for(let i = 0; i < populationSize; i++)
 		{
-			dinos.push(new Dino(2));
+			dinos.push(new Dino());
 		}
 }
 
