@@ -68,6 +68,7 @@ function draw(){
 	let liveshow = dinos.length;
 	text("Generation: " + generation, 500 , 30);
 	text("Live: " + liveshow, 30,  30);
+	console.log(liveshow);
 
 
 }
