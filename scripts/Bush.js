@@ -1,29 +1,3 @@
-/*
-			Krzaki 
-male
-duze
-
-podwojne male 
-potrojne male
-
-potrojne duze 
-potrojne male
-
-przy kazdym wywolaniu losowane jest jedno z tych 6
-
-Jak czesto ma sie generowac?
-Generowanie za ekranem ? 
-Limit?
-
-Przesuwanie
-Kasowanie po wypadnieciu za ekran
-
-Zderzenie z dinozaurem
-
-
-
-*/
-
 class Bush
 {
 	constructor(x, amount, size)
@@ -41,7 +15,6 @@ class Bush
 	{
 		fill(0);
 		rect(this.x, 400 - this.height, this.width, this.height);
-
 	}
 
 	update()
@@ -65,6 +38,4 @@ class Bush
 	{
 		return (this.x < -50);
 	}
-
-
 }
