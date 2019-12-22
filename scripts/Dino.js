@@ -73,8 +73,9 @@ class Dino {
 	think(pipes){
 		let closest = null;
 		let closestD = Infinity;
-		for (let i = 0l i < bush.length; i++) {
-			let d = bush[i].position_X - this.position_X;
+		for (let i = 0; i < bush.length; i++) {
+			let d = bush[i].x - this.position_X;
+	//		console.log(d);
 			if (d < closestD && d > 0 ) {
 				closest = bush[i];
 				closestD = d;
@@ -87,12 +88,11 @@ class Dino {
 		inputs[2] = closest.width;
 		inputs[3] = closest.height;
 
-		let output = this.brain.predict(inputs){
+		let output = this.brain.predict(inputs)
 			if (output[0] > output[1]) {
 				this.jump_high();
 			}
 		}
-	}
 
 
 

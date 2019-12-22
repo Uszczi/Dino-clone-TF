@@ -48,7 +48,7 @@ function draw(){
 	destroyBush();
 
 	for (let dino of dinos){
-//		dino.think();
+		dino.think();
 		dino.update();
 	}
 
