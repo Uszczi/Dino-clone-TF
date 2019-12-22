@@ -10,8 +10,8 @@ class Dino {
 		this.lift = -10;
 //		this.isDucking = false;
 
-		this.score = 0;                //Nie uzywane jeszcze
-		this.fitness = 0;              //Nie uzywane jescze
+		this.score = 0;
+		this.fitness = 0;
 		if(brain) {
 			this.brain = brain.copy();
 		} else {
@@ -26,6 +26,7 @@ class Dino {
 	}
 
 	update() {
+		this.score++;
 		this.velocity += this.gravity;
 
 		if (this.velocity > 16)
@@ -45,6 +46,10 @@ class Dino {
 		this.bottom_Y += this.velocity;
 		}
 		this.show();
+	}
+
+	dispose() {
+		this.brain.dispose();
 	}
 
 	jump_low() {
@@ -67,10 +72,10 @@ class Dino {
 	}
 
 	mutate() {
-		this.brain.mutate(mutationRate)();              // TODO: NIe ma tego jeszcz
+		this.brain.mutate(mutationRate);
 	}
 
-	think(pipes){
+	think(bush) {
 		let closest = null;
 		let closestD = Infinity;
 		for (let i = 0; i < bush.length; i++) {
@@ -90,7 +95,7 @@ class Dino {
 
 		let output = this.brain.predict(inputs)
 			if (output[0] > output[1]) {
-				this.jump_high();
+				this.jump_low();
 			}
 		}
 
