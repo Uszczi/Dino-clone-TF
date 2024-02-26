@@ -26,7 +26,7 @@ class NeuralNetwork {
         modelCopy,
         this.input_nodes,
         this.hidden_nodes,
-        this.output_nodes
+        this.output_nodes,
       );
     });
   }
@@ -56,7 +56,6 @@ class NeuralNetwork {
     this.model.dispose();
   }
 
-
   predict(inputs) {
     return tf.tidy(() => {
       const xs = tf.tensor2d([inputs]);
@@ -72,12 +71,12 @@ class NeuralNetwork {
     const hidden = tf.layers.dense({
       units: this.hidden_nodes,
       inputShape: [this.input_nodes],
-      activation: 'sigmoid'
+      activation: "sigmoid",
     });
     model.add(hidden);
     const output = tf.layers.dense({
       units: this.output_nodes,
-      activation: 'softmax'
+      activation: "softmax",
     });
     model.add(output);
     return model;

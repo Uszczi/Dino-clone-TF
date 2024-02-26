@@ -1,11 +1,10 @@
 function nextGeneration() {
-//  console.log('next generation');
   calculateFitness();
   for (let i = 0; i < populationSize; i++) {
     dinos[i] = pickOne();
   }
   for (let i = 0; i < populationSize; i++) {
-  deadDinos[i].dispose();
+    deadDinos[i].dispose();
   }
   deadDinos = [];
 }
